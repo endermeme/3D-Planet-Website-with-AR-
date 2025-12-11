@@ -34,14 +34,14 @@ function App() {
         onZoomDelta={handleZoomDelta}
       />
 
-      <Canvas camera={{ position: [0, 20, 20], fov: 60 }}>
+      <Canvas camera={{ position: [0, 20, 30], fov: 60 }}>
         <SolarSystem
           currentPlanetIndex={currentPlanetIndex}
           zoomLevel={zoomLevel}
         />
       </Canvas>
 
-      <PlanetDetail planet={currentPlanet} visible={showDetail} />
+      {zoomLevel > 0.8 && <PlanetDetail planet={planets[currentPlanetIndex]} />}
 
       {/* HUD */}
       <div style={{
